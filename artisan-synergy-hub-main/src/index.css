@@ -1,0 +1,242 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ArtisanFlow Design System - Craft-inspired colors and gradients */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap');
+
+@layer base {
+  :root {
+    /* Base colors */
+    --background: 250 250% 99%;
+    --foreground: 222 25% 15%;
+
+    /* Card system */
+    --card: 0 0% 100%;
+    --card-foreground: 222 25% 15%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 222 25% 15%;
+
+    /* Brand colors */
+    --primary: 15 85% 55%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 220 15% 96%;
+    --secondary-foreground: 222 25% 15%;
+
+    --muted: 220 15% 96%;
+    --muted-foreground: 220 10% 46%;
+
+    --accent: 15 85% 95%;
+    --accent-foreground: 15 85% 25%;
+
+    --destructive: 0 65% 51%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 220 13% 91%;
+    --input: 220 13% 91%;
+    --ring: 15 85% 55%;
+
+    --radius: 12px;
+
+    /* Feature card gradients */
+    --gradient-green: linear-gradient(135deg, 142 69% 58%, 164 95% 43%);
+    --gradient-blue: linear-gradient(135deg, 217 91% 60%, 243 75% 59%);
+    --gradient-yellow: linear-gradient(135deg, 48 96% 53%, 54 91% 68%);
+    --gradient-purple: linear-gradient(135deg, 262 83% 58%, 284 100% 40%);
+    --gradient-orange: linear-gradient(135deg, 25 95% 53%, 15 85% 55%);
+    --gradient-pink: linear-gradient(135deg, 330 81% 60%, 346 87% 43%);
+
+    /* Semantic colors */
+    --success: 142 69% 58%;
+    --success-foreground: 0 0% 100%;
+    --warning: 48 96% 53%;
+    --warning-foreground: 25 25% 15%;
+    --info: 217 91% 60%;
+    --info-foreground: 0 0% 100%;
+
+    /* Glassmorphism */
+    --glass-bg: 0 0% 100% / 0.1;
+    --glass-border: 0 0% 100% / 0.2;
+
+    /* Animations */
+    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-bounce: all 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+
+    /* Shadows */
+    --shadow-soft: 0 4px 6px -1px hsl(220 22% 23% / 0.1), 0 2px 4px -1px hsl(220 22% 23% / 0.06);
+    --shadow-medium: 0 10px 15px -3px hsl(220 22% 23% / 0.1), 0 4px 6px -2px hsl(220 22% 23% / 0.05);
+    --shadow-large: 0 20px 25px -5px hsl(220 22% 23% / 0.1), 0 10px 10px -5px hsl(220 22% 23% / 0.04);
+    --shadow-glow: 0 0 40px hsl(var(--primary) / 0.3);
+
+    --sidebar-background: 0 0% 98%;
+
+    --sidebar-foreground: 240 5.3% 26.1%;
+
+    --sidebar-primary: 240 5.9% 10%;
+
+    --sidebar-primary-foreground: 0 0% 98%;
+
+    --sidebar-accent: 240 4.8% 95.9%;
+
+    --sidebar-accent-foreground: 240 5.9% 10%;
+
+    --sidebar-border: 220 13% 91%;
+
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+
+  .dark {
+    /* Dark mode colors - keeping minimal for now since this platform focuses on light mode */
+    --background: 20 20% 8%;
+    --foreground: 20 5% 95%;
+    --card: 20 20% 10%;
+    --card-foreground: 20 5% 95%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans;
+    font-family: 'Inter', sans-serif;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Playfair Display', serif;
+  }
+}
+
+@layer components {
+  /* Feature Cards */
+  .feature-card {
+    @apply rounded-3xl p-6 backdrop-blur-sm border border-white/20 shadow-lg transition-all duration-300 hover:shadow-xl hover:-translate-y-1 cursor-pointer;
+  }
+
+  .feature-card-green {
+    background: var(--gradient-green);
+    @apply text-white;
+  }
+
+  .feature-card-blue {
+    background: var(--gradient-blue);
+    @apply text-white;
+  }
+
+  .feature-card-yellow {
+    background: var(--gradient-yellow);
+    @apply text-gray-800;
+  }
+
+  .feature-card-purple {
+    background: var(--gradient-purple);
+    @apply text-white;
+  }
+
+  .feature-card-orange {
+    background: var(--gradient-orange);
+    @apply text-white;
+  }
+
+  .feature-card-pink {
+    background: var(--gradient-pink);
+    @apply text-white;
+  }
+
+  /* Glass effect */
+  .glass-card {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    @apply rounded-2xl shadow-lg;
+  }
+
+  /* Floating animation */
+  .floating {
+    animation: float 6s ease-in-out infinite;
+  }
+
+  .floating-delayed {
+    animation: float 6s ease-in-out infinite 2s;
+  }
+
+  /* Interactive elements */
+  .interactive-hover {
+    @apply transition-all duration-300 hover:scale-105 hover:shadow-lg;
+  }
+
+  /* Gradient text */
+  .gradient-text {
+    background: linear-gradient(135deg, hsl(var(--primary)), hsl(var(--info)));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  /* Button variants */
+  .btn-hero {
+    @apply bg-primary text-primary-foreground hover:bg-primary/90 px-8 py-4 rounded-2xl font-semibold text-lg shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1;
+  }
+
+  .btn-ghost {
+    @apply bg-white/10 text-white border border-white/20 hover:bg-white/20 px-6 py-3 rounded-xl font-medium backdrop-blur-sm transition-all duration-300;
+  }
+}
+
+@layer utilities {
+  /* Custom animations */
+  @keyframes float {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-20px); }
+  }
+
+  @keyframes pulse-soft {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.8; }
+  }
+
+  @keyframes slide-in-up {
+    from {
+      opacity: 0;
+      transform: translateY(30px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes fade-in {
+    from { opacity: 0; }
+    to { opacity: 1; }
+  }
+
+  /* Animation utilities */
+  .animate-float {
+    animation: float 6s ease-in-out infinite;
+  }
+
+  .animate-pulse-soft {
+    animation: pulse-soft 4s ease-in-out infinite;
+  }
+
+  .animate-slide-in-up {
+    animation: slide-in-up 0.6s ease-out;
+  }
+
+  .animate-fade-in {
+    animation: fade-in 0.8s ease-out;
+  }
+
+  /* Staggered animations */
+  .animate-stagger-1 { animation-delay: 0.1s; }
+  .animate-stagger-2 { animation-delay: 0.2s; }
+  .animate-stagger-3 { animation-delay: 0.3s; }
+  .animate-stagger-4 { animation-delay: 0.4s; }
+  .animate-stagger-5 { animation-delay: 0.5s; }
+  .animate-stagger-6 { animation-delay: 0.6s; }
+}
