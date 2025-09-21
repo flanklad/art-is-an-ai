@@ -121,7 +121,7 @@ const ArtisanDashboard = () => {
                 <Sparkles className="w-6 h-6 text-white" />
               </div>
               <div>
-                <h1 className="text-xl font-bold gradient-text">ArtisanFlow</h1>
+                <h1 className="text-xl font-bold gradient-text">Art-is-an-AI</h1>
                 <p className="text-sm text-muted-foreground">Artisan Dashboard</p>
               </div>
             </div>
@@ -155,7 +155,7 @@ const ArtisanDashboard = () => {
       <div className="container mx-auto px-4 py-8">
         {/* Welcome Section */}
         <div className="mb-8 animate-fade-in">
-          <h2 className="text-3xl font-bold mb-2">Welcome back, Rajesh! 👋</h2>
+          <h2 className="text-3xl font-bold mb-2">Welcome! 👋</h2>
           <p className="text-muted-foreground text-lg">Let's continue building your craft business with AI-powered insights</p>
         </div>
 
@@ -179,20 +179,22 @@ const ArtisanDashboard = () => {
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mb-8">
           {features.map((feature, index) => (
             <Card 
-              key={feature.id} 
-              className={`feature-card ${feature.color} animate-slide-in-up animate-stagger-${index + 1} cursor-pointer transform transition-all duration-300 hover:scale-105`}
+              key={feature.id}
+              className={`feature-card ${feature.color} animate-slide-in-up animate-stagger-${index + 1} cursor-pointer transform transition-all duration-300 hover:scale-105 ${feature.id === 'ai-advisor' ? 'ring-2 ring-green-400 ring-offset-2' : ''}`}
               onClick={() => handleFeatureClick(feature)}
+              tabIndex={0}
+              role="button"
+              aria-label={feature.title}
+              onKeyPress={e => { if (e.key === 'Enter' || e.key === ' ') handleFeatureClick(feature); }}
             >
               <div className="flex items-start justify-between mb-4">
                 <feature.icon className="w-10 h-10" />
-                <Badge variant="secondary" className="bg-white/20 text-white border-0">
+                <Badge variant="secondary" className={`bg-white/20 text-white border-0 ${feature.id === 'ai-advisor' ? 'animate-pulse' : ''}`}>
                   {feature.badge}
                 </Badge>
               </div>
-              
               <h3 className="text-xl font-semibold mb-3">{feature.title}</h3>
               <p className="opacity-90 mb-4 text-sm leading-relaxed">{feature.description}</p>
-              
               <div className="grid grid-cols-2 gap-4 pt-4 border-t border-white/20">
                 {Object.entries(feature.stats).map(([key, value]) => (
                   <div key={key} className="text-center">
@@ -201,6 +203,12 @@ const ArtisanDashboard = () => {
                   </div>
                 ))}
               </div>
+              {feature.id === 'ai-advisor' && (
+                <Button className="mt-4 w-full bg-green-500 text-white hover:bg-green-600 transition-all" onClick={() => handleFeatureClick(feature)}>
+                  <Bot className="w-4 h-4 mr-2" />
+                  Try AI Business Advisor
+                </Button>
+              )}
             </Card>
           ))}
         </div>

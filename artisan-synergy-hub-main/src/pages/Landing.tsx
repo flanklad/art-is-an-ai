@@ -61,7 +61,7 @@ const Landing = () => {
               <div className="w-10 h-10 bg-gradient-to-br from-orange-400 to-pink-500 rounded-xl flex items-center justify-center">
                 <Sparkles className="w-6 h-6 text-white" />
               </div>
-              <h1 className="text-2xl font-bold gradient-text">ArtisanFlow</h1>
+              <h1 className="text-2xl font-bold gradient-text">Art-is-an-AI</h1>
             </div>
             <Button 
               onClick={() => navigate('/auth')}
@@ -170,7 +170,7 @@ const Landing = () => {
             Ready to Transform Your Craft Business?
           </h2>
           <p className="text-xl text-white/90 mb-8 max-w-2xl mx-auto">
-            Join thousands of artisans and NGOs already using ArtisanFlow to build sustainable craft businesses
+            Join thousands of artisans and NGOs already using Art-is-an-AI to build sustainable craft businesses
           </p>
           <Button 
             size="lg" 
@@ -189,7 +189,7 @@ const Landing = () => {
             <div className="w-8 h-8 bg-gradient-to-br from-orange-400 to-pink-500 rounded-lg flex items-center justify-center">
               <Sparkles className="w-5 h-5 text-white" />
             </div>
-            <span className="text-xl font-bold">ArtisanFlow</span>
+            <span className="text-xl font-bold">Art-is-an-AI</span>
           </div>
           <p className="text-center text-gray-400">
             Empowering traditional crafts with modern technology

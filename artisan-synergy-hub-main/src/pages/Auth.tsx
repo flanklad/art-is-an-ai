@@ -77,7 +77,7 @@ const Auth = () => {
             <div className="w-12 h-12 bg-gradient-to-br from-orange-400 to-pink-500 rounded-2xl flex items-center justify-center animate-pulse-soft">
               <Sparkles className="w-6 h-6 text-white" />
             </div>
-            <h1 className="text-3xl font-bold gradient-text">ArtisanFlow</h1>
+            <h1 className="text-3xl font-bold gradient-text">Art-is-an-AI</h1>
           </div>
           <p className="text-muted-foreground">Welcome to the future of artisan empowerment</p>
         </div>

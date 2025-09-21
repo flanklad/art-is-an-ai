@@ -195,19 +195,19 @@ const FeatureModal = ({ isOpen, onClose, featureId, featureTitle, featureColor }
   return (
     <Dialog open={isOpen} onOpenChange={onClose}>
       <DialogContent className="max-w-6xl max-h-[90vh] p-0">
-        <DialogHeader className={`p-6 feature-card ${featureColor} text-white rounded-t-lg`}>
+        <DialogHeader className={`p-6 feature-card ${featureColor} text-black rounded-t-lg`}>
           <div className="flex items-center gap-4">
             <div className="w-12 h-12 bg-white/20 rounded-xl flex items-center justify-center">
               <IconComponent className="w-6 h-6" />
             </div>
             <div>
-              <DialogTitle className="text-2xl font-bold">{featureTitle}</DialogTitle>
-              <p className="opacity-90 mt-1">{feature.overview}</p>
+              <DialogTitle className="text-2xl font-bold text-black">{featureTitle}</DialogTitle>
+              <p className="opacity-90 mt-1 text-black">{feature.overview}</p>
             </div>
           </div>
         </DialogHeader>
 
-        <div className="flex-1 p-6">
+        <div className="flex-1 p-6 text-black">
           <Tabs value={activeTab} onValueChange={setActiveTab}>
             <TabsList className="grid w-full grid-cols-3 mb-6">
               {feature.tabs.map((tab) => (
